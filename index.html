@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boolzapp</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="root">
+
+        <div class="background-wrapper">
+
+            <div class="upper-wrapper"></div>
+            <div class="downer-wrapper"></div>
+
+            <div class="app-container">
+                <!-- left-part -->
+                <div class="left-container">
+                    <!-- owner part -->
+                    <div class="owner-user">
+
+                        <div class="profile-user">
+                            <img src="img/avatar_io.jpg" alt="owner-Avatar img">
+                            <span>Nome Utente</span>
+                        </div>
+
+                        <div class="owner-icons">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+
+                        </div>
+                    </div>
+                    <div class="notify">
+                        <i class="far fa-bell-slash"></i>
+                        <div class="notify-text">
+                            <h4>Ricevi notifiche di nuovi messaggi</h4>
+                            <a href="#">Attiva notifiche desktop </a>
+                        </div>
+                    </div>
+                    <!--end owner part -->
+
+                    <!-- search conversation -->
+                    <div class="search-chat">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <!--End search conversation -->
+
+                    <!-- Chat-Users -->
+                    <div class="chat-container">
+                        <div class="chat-user"> 
+                            <img src="img/avatar_1.jpg" alt="avatar img">
+                            <h6>Michele</h6>
+                        </div>
+                        <div class="chat-user"> 
+                            <img src="img/avatar_1.jpg" alt="avatar img">
+                            <h6>Michele</h6>
+                        </div>
+                        <div class="chat-user"> 
+                            <img src="img/avatar_1.jpg" alt="avatar img">
+                            <h6>Michele</h6>
+                        </div>
+                    </div>
+                    <!--End Chat-Users -->
+                </div>
+                <!--End left-part -->
+
+                <!-- right-part -->
+                <div class="right-container">
+                    <!-- Current chat -->
+                    <div class="current-chat">
+
+                        <div class="current-chat-profile">
+                            <img src="img/avatar_io.jpg" alt="owner-Avatar img">
+                            <span>Nome Utente</span>
+                        </div>
+
+                        <div class="chat-icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+
+                        </div>
+
+                    </div>
+                    <!--End Current chat -->
+
+                    <!-- chat-main -->
+                    <div class="chat-main">
+                        <div class="message-recieved">
+                           <div class="text-msg">majasjnd</div>
+                           <div class="time-msg">23.44.2010</div> 
+                        </div>
+                        <div class="message-sended">
+                           <div class="text-msg">majasjnd</div>
+                           <div class="time-msg"></div> 
+                        </div>
+
+                    </div>
+                    <!--End chat-main -->
+
+                    <!-- chat-imput -->
+                    <div class="chat-input">
+                        <i class="far fa-smile-beam"></i>
+
+                        <input type="text" placeholder="Scrivi un messaggio">
+
+                        <i class="fas fa-microphone"></i>
+
+
+                    </div>
+                    <!--End chat-imput -->
+
+
+                </div>
+                <!--End right-part -->
+                
+
+            </div>
+            
+
+        </div>
+
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
