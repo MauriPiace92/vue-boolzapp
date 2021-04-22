@@ -59,17 +59,9 @@
 
                     <!-- Chat-Users -->
                     <div class="chat-container">
-                        <div class="chat-user"> 
-                            <img src="img/avatar_1.jpg" alt="avatar img">
-                            <h6>Michele</h6>
-                        </div>
-                        <div class="chat-user"> 
-                            <img src="img/avatar_1.jpg" alt="avatar img">
-                            <h6>Michele</h6>
-                        </div>
-                        <div class="chat-user"> 
-                            <img src="img/avatar_1.jpg" alt="avatar img">
-                            <h6>Michele</h6>
+                        <div v-for='contact in contacts' class="chat-user"> 
+                            <img :src="allAvatar(contact)" alt="avatar img">
+                            <h6>{{contact.name}}</h6>
                         </div>
                     </div>
                     <!--End Chat-Users -->
