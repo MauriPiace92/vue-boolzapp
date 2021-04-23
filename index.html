@@ -52,16 +52,17 @@
                     <div class="search-chat">
                         <div class="search-bar">
                             <label for="search-user"><i class="fas fa-search"></i></label> 
-                            <input id="search user" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input id="search-user" type="text" placeholder="Cerca o inizia una nuova chat" v-model="filterName" @keyup="searchUtent" >
                         </div>
                     </div>
                     <!--End search conversation -->
 
                     <!-- Chat-Users -->
                     <div class="chat-container">
-                        <div v-for='(contact, index) in contacts' class="chat-user" :class="{ 'active': index == contactIndex}" @click='openChat(index)'> 
+                        <div v-for='(contact, index) in contacts' class="chat-user" :class="{ 'active': index == contactIndex}" @click='openChat(index)' v-if="contact.visible"> 
                             <img :src="allAvatar(contact)" alt="avatar img">
                             <h6>{{contact.name}}</h6>
+            
                         </div>
                     </div>
                     <!--End Chat-Users -->

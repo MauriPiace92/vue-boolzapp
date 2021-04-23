@@ -4,6 +4,7 @@ var app = new Vue(
         data : {
             contactIndex:0 ,
             msgText:'',
+            filterName:'',
 
             contacts: [
                 {
@@ -104,7 +105,6 @@ var app = new Vue(
             },
 
             chatCoversation(message){
-                console.log(message.status)
                 return 'message-'+ message.status
             },
             newSendMsg(){
@@ -131,6 +131,20 @@ var app = new Vue(
                         status: 'received'
                     }
                 );
+                
+            },
+
+            searchUtent(){
+
+                this.contacts.forEach(element => {
+
+                    if(element.name.toLowerCase().includes(this.filterName.toLowerCase())){
+                        element.visible = true;
+                    }else{
+                        element.visible = false;
+                    }
+                    
+                });
                 
             }
         },
