@@ -167,6 +167,7 @@ input:focus {
     align-items: center;
     padding: 20px;
     background-color: #eaeaea;
+    height: 85px;
 }
 .current-chat-profile{
     width: 54%;
@@ -193,6 +194,7 @@ input:focus {
 /* CHAT MAIN */
 .chat-container{
     overflow-y: auto;
+    height: calc( 100% - 145px );
 }
 .chat-main {
     width:100%;
@@ -244,6 +246,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 60px;
 }
 
 .chat-input input{

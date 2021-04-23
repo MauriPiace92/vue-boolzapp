@@ -3,6 +3,7 @@ var app = new Vue(
         el: '#root',
         data : {
             contactIndex:0 ,
+            msgText:'',
 
             contacts: [
                 {
@@ -105,6 +106,32 @@ var app = new Vue(
             chatCoversation(message){
                 console.log(message.status)
                 return 'message-'+ message.status
+            },
+            newSendMsg(){
+                if(this.msgText.length > 0){
+                    this.contacts[this.contactIndex].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                            text: this.msgText,
+                            status: 'sent'
+                        }
+                    );
+                    this.msgText='';
+
+                    // autoreply:
+                    setTimeout(this.autoreply, 1500)
+                }
+
+            },
+            autoreply(){
+                this.contacts[this.contactIndex].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'ok boss',
+                        status: 'received'
+                    }
+                );
+                
             }
         },
     }
