@@ -51,15 +51,15 @@
                     <!-- search conversation -->
                     <div class="search-chat">
                         <div class="search-bar">
-                            <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <label for="search-user"><i class="fas fa-search"></i></label> 
+                            <input id="search user" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <!--End search conversation -->
 
                     <!-- Chat-Users -->
                     <div class="chat-container">
-                        <div v-for='(contact, index) in contacts' class="chat-user" @click='openChat(index)'> 
+                        <div v-for='(contact, index) in contacts' class="chat-user" :class="{ 'active': index == contactIndex}" @click='openChat(index)'> 
                             <img :src="allAvatar(contact)" alt="avatar img">
                             <h6>{{contact.name}}</h6>
                         </div>
@@ -73,7 +73,7 @@
                     <!-- Current chat -->
                     <div class="current-chat">
 
-                        <div class="current-chat-profile">
+                        <div class="current-chat-profile ">
                             <img :src="allAvatar(contacts[contactIndex])" alt="owner-Avatar img">
                             <span>{{contacts[contactIndex].name}}</span>
                         </div>
@@ -89,10 +89,12 @@
                     <!--End Current chat -->
 
                     <!-- chat-main -->
-                    <div v-for="message in contacts[contactIndex].messages" class="chat-main ">
-                        <div :class=" chatCoversation(message)" >
-                            <span class="text-msg"> {{ message.text }} </span>
-                            <span class="time-msg"> {{ message.date }} </span>
+                    <div class="chat-container">
+                        <div v-for="(message,index) in contacts[contactIndex].messages" class="chat-main ">
+                            <div :class=" chatCoversation(message)" >
+                                <div class="text-msg"> {{ message.text }} </div>
+                                <div class="time-msg"> {{ message.date }} </div>
+                            </div>
                         </div>
                     </div>
                     <!--End chat-main -->
