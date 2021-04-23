@@ -123,6 +123,11 @@
     border-bottom: 1px solid #eaeaea;
     display: flex;
 }
+.chat-user:hover{
+    background-color:#b1b1b1 ;
+}
+
+
 
 .chat-user img{
     width: 10%;
@@ -137,6 +142,7 @@
 
 /* RIGHT PART */
 .right-container{
+    background-image: url(../img/mine.jpg);
     width: 60%;
     height: 100%;
     float: right;
@@ -175,14 +181,11 @@
 
 /* CHAT MAIN */
 .chat-main {
-    background-image: url(../img/mine.jpg);
     width:100%;
-    height: 100%;
     padding: 30px 50px;
-
 }
 
-.message-recieved{
+.message-received{
     background-color: white;
     border-radius: 7px;
     padding: 10px 11px;
@@ -190,7 +193,7 @@
 }
 
 
-.message-sended{
+.message-sent{
     background-color: #d5f9ba;
     border-radius: 7px;
     padding: 10px 11px;

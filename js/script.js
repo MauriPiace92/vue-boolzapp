@@ -2,6 +2,8 @@ var app = new Vue(
     {
         el: '#root',
         data : {
+            contactIndex:0 ,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -91,9 +93,19 @@ var app = new Vue(
         },
         methods:{
             allAvatar(contact) {
-                console.log(contact.avatar)
+                
                 return 'img/avatar' + contact.avatar + '.jpg';
             },
+            
+
+            openChat(index){
+                this.contactIndex= index;
+            },
+
+            chatCoversation(message){
+                console.log(message.status)
+                return 'message-'+ message.status
+            }
         },
     }
-)
+)                      

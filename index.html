@@ -59,7 +59,7 @@
 
                     <!-- Chat-Users -->
                     <div class="chat-container">
-                        <div v-for='contact in contacts' class="chat-user"> 
+                        <div v-for='(contact, index) in contacts' class="chat-user" @click='openChat(index)'> 
                             <img :src="allAvatar(contact)" alt="avatar img">
                             <h6>{{contact.name}}</h6>
                         </div>
@@ -74,8 +74,8 @@
                     <div class="current-chat">
 
                         <div class="current-chat-profile">
-                            <img src="img/avatar_io.jpg" alt="owner-Avatar img">
-                            <span>Nome Utente</span>
+                            <img :src="allAvatar(contacts[contactIndex])" alt="owner-Avatar img">
+                            <span>{{contacts[contactIndex].name}}</span>
                         </div>
 
                         <div class="chat-icons">
@@ -89,16 +89,11 @@
                     <!--End Current chat -->
 
                     <!-- chat-main -->
-                    <div class="chat-main">
-                        <div class="message-recieved">
-                           <div class="text-msg">majasjnd</div>
-                           <div class="time-msg">23.44.2010</div> 
+                    <div v-for="message in contacts[contactIndex].messages" class="chat-main ">
+                        <div :class=" chatCoversation(message)" >
+                            <span class="text-msg"> {{ message.text }} </span>
+                            <span class="time-msg"> {{ message.date }} </span>
                         </div>
-                        <div class="message-sended">
-                           <div class="text-msg">majasjnd</div>
-                           <div class="time-msg"></div> 
-                        </div>
-
                     </div>
                     <!--End chat-main -->
 
