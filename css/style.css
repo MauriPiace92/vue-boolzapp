@@ -8,6 +8,11 @@
     height: 100vh;
     position: relative;
     font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom,
+            #009688 0px,
+            #009688 15vh,
+            #DDDBC3 15vh,
+            #d2dbdc 100%);
 }
 
 .upper-wrapper{
