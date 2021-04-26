@@ -62,6 +62,8 @@
                         <div v-for='(contact, index) in contacts' class="chat-user" :class="{ 'active': index == contactIndex}" @click='openChat(index)' v-if="contact.visible"> 
                             <img :src="allAvatar(contact)" alt="avatar img">
                             <h6>{{contact.name}}</h6>
+                            <div class="preview-chat">{{textcutofmessage(contact)}} </div>
+                            <div class="last-access-single">{{getActiveMessageDate(index)}}</div>
             
                         </div>
                     </div>
@@ -77,6 +79,7 @@
                         <div class="current-chat-profile ">
                             <img :src="allAvatar(contacts[contactIndex])" alt="owner-Avatar img">
                             <span>{{contacts[contactIndex].name}}</span>
+                            <span class="access" v-if='contacts[contactIndex].messages.length > 0'>Ultimo accesso: {{getActiveMessageDate(contactIndex)}}</span>
                         </div>
 
                         <div class="chat-icons">
@@ -93,8 +96,14 @@
                     <div class="chat-container">
                         <div v-for="(message,index) in contacts[contactIndex].messages" class="chat-main ">
                             <div :class=" chatCoversation(message)" >
+                                <div class="chevron" @click='openDrop(index)'><i class="fas fa-chevron-down"></i></div>
                                 <div class="text-msg"> {{ message.text }} </div>
                                 <div class="time-msg"> {{ message.date }} </div>
+                        
+                                <div v-if="index === activeMsg" class="dropdown">
+                                    <div>Info messaggio</div>
+                                    <div class="del-message" @click="deleteMessage(index)">Cancella messaggio</div>
+                                </div>
                             </div>
                         </div>
                     </div>

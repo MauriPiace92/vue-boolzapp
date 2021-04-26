@@ -66,6 +66,7 @@
 .owner-icons{
     color: #b1b1b1;  
     text-align: right;
+    display: flex;
     width: 20%;  
 }
 
@@ -128,6 +129,7 @@ input:focus {
 .chat-user{
     padding: 10px;
     border-bottom: 1px solid #eaeaea;
+    position: relative;
     display: flex;
     flex-grow: 1;
 }
@@ -138,6 +140,18 @@ input:focus {
     background-color:#b1b1b1 ;
 }
 
+.preview-chat{
+    position: absolute;
+    top: 36px;
+    left: 95px;
+    font-size: 12px;    
+}
+.last-access-single{
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    font-size: 10px;
+}
 
 
 .chat-user img{
@@ -190,11 +204,19 @@ input:focus {
     margin: 0 5px;
     cursor: pointer;
 }
+.access{
+    position:absolute;
+    top:52px;
+    left:80px;
+    color:#b1b1b1;
+    font-size: 12px;
+}
 
 /* CHAT MAIN */
 .chat-container{
     overflow-y: auto;
     height: calc( 100% - 145px );
+    position: relative;
 }
 .chat-main {
     width:100%;
@@ -234,6 +256,37 @@ input:focus {
     bottom: 3px;
     right: 5px;
 }
+.dropdown{
+    text-align: right;
+    position: absolute;
+    bottom: -27px;
+    right: -20px;
+    background-color: white; 
+    box-shadow: 1px 3px 10px 5px rgba(0,0,0,0.2);;
+    padding: 10px;
+}
+.dropdown div{
+    font-size: 12px;
+    cursor: pointer;
+}
+.dropdown div:hover{
+    font-weight: bold;
+    
+}
+
+.chevron{
+    position:absolute;
+    top: 5px;
+    right: 7px;
+    color: #b1b1b1;
+    cursor:pointer;
+    display:none;
+}
+.message-received:hover .chevron,
+.message-sent:hover .chevron{
+    display: block;
+}
+
 
 /* CHAT INPUT */
 .chat-input{
